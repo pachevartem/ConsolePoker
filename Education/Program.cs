@@ -36,7 +36,7 @@ namespace Education
             return 0;
         }
 
-        public static int TwoPlusThree(int[] mass)
+        public static int FullHouse(int[] mass)
         {
             var sort = mass
                 .GroupBy(i => i)
@@ -53,11 +53,10 @@ namespace Education
                 }
                 
             }
-            
             return 0;
         }
 
-        public static int DoubleTwo(int[] mass)
+        public static int Pair(int[] mass)
         {
             var sort = mass
                 .GroupBy(i => i)
@@ -71,7 +70,7 @@ namespace Education
             return 0;
         }
 
-        public static int StreetLong(int[] number)
+        public static int LongStreet(int[] number)
         {
             int[] s = {2, 3, 4, 5, 6};
             var result = number.OrderBy(i => i).ToArray();
@@ -98,7 +97,7 @@ namespace Education
             return m.ToArray();
         }
 
-        static int MaxEqCombination(int[] mass, int numCombination)
+        static int IdenticalСards(int[] mass, int numCombination)
         {
             var s = mass
                 .GroupBy(i => i)
@@ -117,14 +116,14 @@ namespace Education
             Console.WriteLine($"Five:      {School(mass, 5)}");
             Console.WriteLine($"Six:       {School(mass, 6)}");
             Console.WriteLine("_*_*_*_*_*_*_*_*_*_*_*_*_");
-            Console.WriteLine("2:          " + MaxEqCombination(mass, 2));
-            Console.WriteLine("2+2:        " + DoubleTwo(mass));
-            Console.WriteLine("3:          " + MaxEqCombination(mass, 3));
-            Console.WriteLine("3+2:        " + TwoPlusThree(mass));
-            Console.WriteLine("4:          " + MaxEqCombination(mass, 4));
+            Console.WriteLine("2:          " + IdenticalСards(mass, 2));
+            Console.WriteLine("2+2:        " + Pair(mass));
+            Console.WriteLine("3:          " + IdenticalСards(mass, 3));
+            Console.WriteLine("3+2:        " + FullHouse(mass));
+            Console.WriteLine("4:          " + IdenticalСards(mass, 4));
             Console.WriteLine("Street:     " + Street(mass));
-            Console.WriteLine("StreetLong: " + StreetLong(mass));
-            Console.WriteLine("5:          " + MaxEqCombination(mass, 5));
+            Console.WriteLine("StreetLong: " + LongStreet(mass));
+            Console.WriteLine("5:          " + IdenticalСards(mass, 5));
             Console.WriteLine("");
         }
     }
